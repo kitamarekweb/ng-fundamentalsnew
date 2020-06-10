@@ -1,4 +1,5 @@
 == 1 ==
+ng-fundamentalsnew\angular.json ("main": "src/main.ts") ("index": "src/index.html")
 // ng-fundamentalsnew\src\main.ts START ->
 // ng-fundamentalsnew\src\app\app.module.ts START (bootstrap: [EventsAppComponent]) ->
 <!--ng-fundamentalsnew\src\index.html START--> ->
