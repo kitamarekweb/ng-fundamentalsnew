@@ -1,0 +1,8 @@
+== 1 ==
+// ng-fundamentalsnew\src\main.ts START ->
+// ng-fundamentalsnew\src\app\app.module.ts START (bootstrap: [EventsAppComponent]) ->
+<!--ng-fundamentalsnew\src\index.html START--> ->
+// ng-fundamentalsnew\src\app\events-app.component.ts START ->
+// ng-fundamentalsnew\src\app\events\events-list.component.ts START
+
+== 2 ==
