@@ -26,10 +26,17 @@ export class EventThumbnailComponent {
   @Input() event: any;
   @Output() eventClick = new EventEmitter();
 
+  someProperty: any = 'some property';
+
   handleClickMe() {
     console.log('clicked');
     this.eventClick.emit(this.event.name);
   }
+
+  logFoo() {
+    console.log('foo from template reference variable');
+  }
+
 }
 
 // ng-fundamentalsnew\src\app\events\event-thumbnail.component.ts END
