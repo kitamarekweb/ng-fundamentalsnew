@@ -8,7 +8,8 @@ import {Component} from '@angular/core';
     <div>
       <h1>Upcoming Angular Events</h1>
       <hr>
-      <event-thumbnail [event]="eventOne"></event-thumbnail>
+      <event-thumbnail (eventClick)="handleEventClicked($event)"
+                       [event]="eventOne"></event-thumbnail>
     </div>
   `
 })
@@ -27,6 +28,11 @@ export class EventsListComponent {
       country: 'England'
     }
   };
+
+  handleEventClicked(data) {
+    console.log('recieved:', data);
+  }
+
 }
 
 // ng-fundamentalsnew\src\app\events\events-list.component.ts END
