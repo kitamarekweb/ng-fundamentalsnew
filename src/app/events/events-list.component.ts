@@ -2,14 +2,21 @@
 import {Component} from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'events-list',
-  templateUrl: './events-list.component.html'
+  template: `
+    <div>
+      <h1>Upcoming Angular Events</h1>
+      <hr>
+      <event-thumbnail [event]="eventOne"></event-thumbnail>
+    </div>
+  `
 })
 
 export class EventsListComponent {
-  event = {
+  eventOne = {
     id: 1,
-    name: 'Angular Connect',
+    name: 'Angular Connect - Event One',
     time: '10:00 am',
     date: '9/26/2036',
     price: 599.99,
