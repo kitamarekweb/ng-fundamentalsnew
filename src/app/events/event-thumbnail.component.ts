@@ -6,13 +6,13 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   selector: 'event-thumbnail',
   template: `
     <div class="well hoverwell thumbnail">
-      <h2>{{event.name}}</h2>
-      <div>Date: {{event.date}}</div>
-      <div>Time: {{event.time}}</div>
-      <div>Price: \${{event.price}}</div>
+      <h2>{{event?.name}}</h2>
+      <div>Date: {{event?.date}}</div>
+      <div>Time: {{event?.time}}</div>
+      <div>Price: \${{event?.price}}</div>
       <div>
-        <span>Location: {{event.location.address}}</span>
-        <span class="pad-left">{{event.location.city}}, {{event.location.country}}</span>
+        <span>Location: {{event?.location?.address}}</span>
+        <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
       </div>
       <button class="btn btn-primary" (click)="handleClickMe()">
         Click me!
@@ -21,7 +21,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   `,
   styles: [`
     .thumbnail { min-height: 210px; }
-    .pad-left { margin-left: 100px; }
+    .pad-left { margin-left: 25px; }
     .well div { color: #bbb; }
   `]
 })
