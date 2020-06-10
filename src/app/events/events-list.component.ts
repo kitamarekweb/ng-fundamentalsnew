@@ -7,19 +7,21 @@ import {Component} from '@angular/core';
   template: `
     <div>
       <h1>Upcoming Angular Events</h1>
+      <event-thumbnail (eventClick)="handleEventClicked($event)"
+                       #thumbnail [event]="eventOne"></event-thumbnail>
       <hr>
       <div class="well">
         <div>Hello world again...</div>
-        <img src="../../assets/images/basic-shield.png" alt="basic shield Angular" />
+        <img src="../../assets/images/basic-shield.png" alt="basic shield Angular"/>
       </div>
-      <event-thumbnail (eventClick)="handleEventClicked($event)"
-                       #thumbnail [event]="eventOne"></event-thumbnail>
-      <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me some foo</button>
       <h3>{{thumbnail.someProperty}}</h3>
+      <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me some foo</button>
     </div>
   `,
   styles: [`
-    .well div { color: darkorange; }
+    .well div {
+      color: darkorange;
+    }
   `]
 })
 

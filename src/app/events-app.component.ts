@@ -4,7 +4,12 @@ import {Component} from '@angular/core';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'events-app',
-  template: '<events-list></events-list>',
+  template: `
+    <div class="container">
+      <nav-bar></nav-bar>
+      <events-list></events-list>
+    </div>
+  `,
   styleUrls: ['./app.component.css']
 })
 export class EventsAppComponent {

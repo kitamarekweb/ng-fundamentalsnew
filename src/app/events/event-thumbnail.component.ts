@@ -29,7 +29,7 @@ export class EventThumbnailComponent {
   @Input() event: any;
   @Output() eventClick = new EventEmitter();
 
-  someProperty: any = 'some property';
+  someProperty: any = 'some property showing';
 
   handleClickMe() {
     console.log('clicked');

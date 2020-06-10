@@ -7,3 +7,6 @@ ng-fundamentalsnew\angular.json ("main": "src/main.ts") ("index": "src/index.htm
 // ng-fundamentalsnew\src\app\events\events-list.component.ts START
 
 == 2 ==
+ng-fundamentalsnew\angular.json ("assets": [..])
+
+== 3 ==

@@ -7,12 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {EventsAppComponent} from './events-app.component';
 import {EventsListComponent} from './events/events-list.component';
 import {EventThumbnailComponent} from './events/event-thumbnail.component';
+import {NavbarComponent} from './nav/navbar.component';
 
 @NgModule({
   declarations: [
     EventsAppComponent,
     EventsListComponent,
-    EventThumbnailComponent
+    EventThumbnailComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -24,4 +26,5 @@ import {EventThumbnailComponent} from './events/event-thumbnail.component';
 })
 export class AppModule {
 }
+
 // ng-fundamentalsnew\src\app\app.module.ts END
