@@ -21,7 +21,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   `,
   styles: [`
   .pad-left { margin-left: 25px; }
-    .well div { color: #bd362f; }
+    .well div { color: yellowgreen; }
   `]
 })
 
