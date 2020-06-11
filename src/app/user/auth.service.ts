@@ -19,6 +19,12 @@ export class AuthService {
   isAuthenticated() {
     return !!this.currentUser;
   }
+
+  updateCurrentUser(firstName:string, lastName:string) {
+    this.currentUser.firstName = firstName;
+    this.currentUser.lastName = lastName;
+  }
+
 }
 
 // ng-fundamentalsnew\src\app\user\auth.service.ts END
