@@ -1,5 +1,5 @@
 // ng-fundamentalnew\src\app\events\create-event.component.ts START
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {EventService} from "./shared";
 
@@ -15,13 +15,29 @@ import {EventService} from "./shared";
   `]
 })
 
-export class CreateEventComponent {
+export class CreateEventComponent implements OnInit{
   isDirty: boolean = true;
   newEvent;
 
   //inject Router service
   constructor(private router: Router, private eventService: EventService) {
   }
+
+  ngOnInit() {
+    this.newEvent = {
+      name: 'Ng Spectacular',
+      date: '8/8/2028',
+      time: '10am',
+      price: 799.99,
+      location: {
+        address: '456 Happy St',
+        city: 'Felicty',
+        country: 'Angularistan'
+      },
+      onlineUrl: 'http://ngSpectacular.com',
+      imageUrl: 'http://ngSpectacular.com/logo.png',
+    };
+  };
 
   saveEvent(formValues) {
     console.log(formValues);
