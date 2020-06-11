@@ -16,7 +16,8 @@ import {
   EventService,
   EventsListResolver,
   EventRouteActivator,
-  CreateSessionComponent
+  CreateSessionComponent,
+  SessionListComponent
 } from './events';
 
 import {RouterModule} from '@angular/router';
@@ -34,7 +35,8 @@ import {AuthService} from "./user/auth.service";
     CreateEventComponent,
     Error404Component,
     NavbarComponent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,
