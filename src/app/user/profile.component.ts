@@ -8,12 +8,31 @@ import {Router} from '@angular/router';
 @Component({
   templateUrl: './profile.component.html',
   styles: [`
-    em {float:right; color: #E05C65; padding-left: 10px; }
-    .error input { background: #E3C3C3; }
-    .error ::-webkit-input-placeholder { color: #999; }
-    .error ::-moz-placeholder { color: #999; }
-    .error :-moz-placeholder { color: #999; }
-    .error :-ms-input-placeholder { color: #999; }
+    em {
+      float: right;
+      color: #E05C65;
+      padding-left: 10px;
+    }
+
+    .error input {
+      background: #E3C3C3;
+    }
+
+    .error ::-webkit-input-placeholder {
+      color: #999;
+    }
+
+    .error ::-moz-placeholder {
+      color: #999;
+    }
+
+    .error :-moz-placeholder {
+      color: #999;
+    }
+
+    .error :-ms-input-placeholder {
+      color: #999;
+    }
   `]
 })
 export class ProfileComponent implements OnInit {
@@ -25,7 +44,8 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.firstName = new FormControl(this.authService.currentUser.firstName, Validators.required);
+    this.firstName = new FormControl(this.authService.currentUser.firstName,
+      [Validators.required, Validators.pattern('[a-zA-Z ]*')]);
     this.lastName = new FormControl(this.authService.currentUser.lastName, Validators.required);
     this.profileForm = new FormGroup({
       firstName: this.firstName,
