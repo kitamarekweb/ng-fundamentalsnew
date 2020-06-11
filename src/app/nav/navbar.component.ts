@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   selector: 'nav-bar',
   templateUrl: './nav-bar.component.html',
   styles: [`
-    .nav.navbar-nav  {
+    .nav.navbar-nav {
       font-size: 15px;
     }
 
@@ -18,6 +18,10 @@ import {Component} from '@angular/core';
       #searchForm {
         display: none
       }
+    }
+
+    li > a.active {
+      color: #f97924;
     }
   `]
 })
