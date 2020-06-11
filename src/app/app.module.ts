@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {EventsAppComponent} from './events-app.component';
 import {NavbarComponent} from './nav/navbar.component';
 import {Error404Component} from './errors/404.component';
+import {CollapsibleWellComponent} from "./common/collapsible-well.component";
 
 import {
   EventsListComponent,
@@ -36,7 +37,8 @@ import {AuthService} from "./user/auth.service";
     Error404Component,
     NavbarComponent,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,

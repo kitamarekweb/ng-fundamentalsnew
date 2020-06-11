@@ -15,6 +15,10 @@ import {IEvent, ISession} from '../shared';
     .event-image {
       height: 100px;
     }
+
+    a {
+      cursor: pointer
+    }
   `]
 })
 
