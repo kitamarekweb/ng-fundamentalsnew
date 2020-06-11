@@ -1,25 +1,17 @@
 // ng-fundamentalsnew\src\app\common\toastr.service.ts START
-import {Injectable} from '@angular/core';
+import {InjectionToken} from '@angular/core';
 
-declare let toastr: any;
+export let TOASTR_TOKEN = new InjectionToken<ToastrService>('toastr');
 
-@Injectable()
 export class ToastrService {
-  success(message: string, title?: string) {
-    toastr.success(message, title);
-  }
-
-  info(message: string, title?: string) {
-    toastr.info(message, title);
-  }
-
-  warning(message: string, title?: string) {
-    toastr.warning(message, title);
-  }
-
-  error(message: string, title?: string) {
-    toastr.error(message, title);
-  }
+  // @ts-ignore
+  success(msg: string, title?: string): void;
+  // @ts-ignore
+  info(msg: string, title?: string): void;
+  // @ts-ignore
+  warning(msg: string, title?: string): void;
+  // @ts-ignore
+  error(msg: string, title?: string): void;
 }
 
 // ng-fundamentalsnew\src\app\common\toastr.service.ts END

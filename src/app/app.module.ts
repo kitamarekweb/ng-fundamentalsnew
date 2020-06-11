@@ -25,8 +25,10 @@ import {
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 
-import {ToastrService} from './common/toastr.service';
+import {ToastrService, TOASTR_TOKEN} from './common/toastr.service';
 import {AuthService} from "./user/auth.service";
+
+declare let toastr: ToastrService;
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import {AuthService} from "./user/auth.service";
   ],
   providers: [
     EventService,
+    { provide: TOASTR_TOKEN, useValue: toastr },
     ToastrService,
     EventRouteActivator,
     EventsListResolver,
