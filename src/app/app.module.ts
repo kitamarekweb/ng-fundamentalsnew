@@ -22,6 +22,7 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 
 import {ToastrService} from './common/toastr.service';
+import {AuthService} from "./user/auth.service";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {ToastrService} from './common/toastr.service';
     ToastrService,
     EventRouteActivator,
     EventsListResolver,
+    AuthService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
