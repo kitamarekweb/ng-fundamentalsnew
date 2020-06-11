@@ -10,6 +10,9 @@ import {EventThumbnailComponent} from './events/event-thumbnail.component';
 import {NavbarComponent} from './nav/navbar.component';
 import {EventDetailsComponent} from './events/event-details/event-details.component';
 
+import {RouterModule} from '@angular/router';
+import {appRoutes} from './routes';
+
 import {EventService} from './events/shared/event.service';
 import {ToastrService} from './common/toastr.service';
 
@@ -24,7 +27,8 @@ import {ToastrService} from './common/toastr.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     EventService,

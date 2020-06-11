@@ -7,7 +7,7 @@ import {ToastrService} from '../common/toastr.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'events-list',
+  // selector: 'events-list', // we do not need selector anymore because we are using routes now
   template: `
     <div>
       <h1>Upcoming Angular Events</h1>

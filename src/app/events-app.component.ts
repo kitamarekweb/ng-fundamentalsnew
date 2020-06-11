@@ -7,7 +7,9 @@ import {Component} from '@angular/core';
   template: `
     <div class="container">
       <nav-bar></nav-bar>
-      <events-list></events-list>
+      <!--we stopped using selector <events-list></events-list> because we switched to routes and we are using
+       <router-outlet></router-outlet>-->
+      <router-outlet></router-outlet>
     </div>
   `,
   styleUrls: ['./app.component.css']
