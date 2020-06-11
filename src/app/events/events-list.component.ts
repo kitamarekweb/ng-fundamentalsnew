@@ -2,6 +2,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EventService} from './shared/event.service';
 import {ToastrService} from '../common/toastr.service';
+import {ActivatedRoute} from '@angular/router';
 
 // declare let toastr: any;
 
@@ -39,7 +40,8 @@ import {ToastrService} from '../common/toastr.service';
 
 export class EventsListComponent implements OnInit {
 
-  constructor(private eventService: EventService, private toastr: ToastrService) {
+  constructor(private eventService: EventService, private toastr: ToastrService,
+              private route: ActivatedRoute) {
   }
 
   events: any[];
@@ -59,7 +61,10 @@ export class EventsListComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
+    // this.eventServices.getEvents().subscribe(events => {this.events = events; });
+    // we do not need that anymore because we are doing it in our events-list-resolver.service.ts
+    this.events = this.route.snapshot.data['events'];
+
   }
 
   handleThumbnailClick(eventName) {
