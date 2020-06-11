@@ -6,7 +6,8 @@ import {
   EventDetailsComponent,
   CreateEventComponent,
   EventRouteActivator,
-  EventsListResolver
+  EventsListResolver,
+  CreateSessionComponent
 } from './events';
 
 export const appRoutes: Routes = [
@@ -14,6 +15,7 @@ export const appRoutes: Routes = [
   //important: have /new before /:id on this /events route, if not Angular will think the "new" is an ":id"
   {path: 'events', component: EventsListComponent, resolve: {events: EventsListResolver}},
   {path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivator]},
+  {path: 'events/session/new', component: CreateSessionComponent},
   {path: '404', component: Error404Component},
   {path: '', redirectTo: '/events', pathMatch: 'full'},
   {path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)}

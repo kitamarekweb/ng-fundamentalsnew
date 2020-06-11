@@ -1,7 +1,7 @@
 // ng-fundamentalsnew\src\app\app.module.ts START
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {EventsAppComponent} from './events-app.component';
@@ -15,7 +15,8 @@ import {
   CreateEventComponent,
   EventService,
   EventsListResolver,
-  EventRouteActivator
+  EventRouteActivator,
+  CreateSessionComponent
 } from './events';
 
 import {RouterModule} from '@angular/router';
@@ -32,13 +33,15 @@ import {AuthService} from "./user/auth.service";
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
-    NavbarComponent
+    NavbarComponent,
+    CreateSessionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [
     EventService,
