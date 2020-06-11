@@ -18,7 +18,8 @@ import {
   EventsListResolver,
   EventRouteActivator,
   CreateSessionComponent,
-  SessionListComponent
+  SessionListComponent,
+  DurationPipe
 } from './events';
 
 import {RouterModule} from '@angular/router';
@@ -38,7 +39,8 @@ import {AuthService} from "./user/auth.service";
     NavbarComponent,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,

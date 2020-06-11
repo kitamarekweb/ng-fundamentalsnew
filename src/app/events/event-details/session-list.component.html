@@ -13,7 +13,7 @@
         <!--      <div class="body">-->
         <!--        <body>-->
         <h6>{{session.presenter}}</h6>
-        <span>Duration: {{session.duration}}</span><br/>
+        <span>Duration: {{session.duration | duration}}</span><br/>
         <span>Level: {{session.level}}</span>
         <p>{{session.abstract}}</p>
         <!--        </body>-->
@@ -21,11 +21,11 @@
     </collapsible-well>
 
     <!--    <collapsible-well [title]="session.name">-->
-<!--      <h6>{{session.presenter}}</h6>-->
-<!--      <span>Duration: {{session.duration}}</span><br/>-->
-<!--      <span>Level: {{session.level}}</span>-->
-<!--      <p>{{session.abstract}}</p>-->
-<!--    </collapsible-well>-->
+    <!--      <h6>{{session.presenter}}</h6>-->
+    <!--      <span>Duration: {{session.duration}}</span><br/>-->
+    <!--      <span>Level: {{session.level}}</span>-->
+    <!--      <p>{{session.abstract}}</p>-->
+    <!--    </collapsible-well>-->
   </div>
 </div>
 <!--ng-fundamentalsnew\src\app\events\event-details\session-list.component.html END-->
