@@ -1,12 +1,31 @@
 <!--ng-fundamentalsnew\src\app\events\event-details\session-list.component.html START-->
 <div class="row" *ngFor="let session of sessions">
   <div class="col-md-10">
-    <collapsible-well [title]="session.name">
-      <h6>{{session.presenter}}</h6>
-      <span>Duration: {{session.duration}}</span><br/>
-      <span>Level: {{session.level}}</span>
-      <p>{{session.abstract}}</p>
+    <collapsible-well>
+      <div well-title>
+        <!--      <div class="title">-->
+        <!--        <title>-->
+        {{session.name}}
+        <i *ngIf="session.voters.length > 3" class="glyphicon glyphicon-fire" style="color: red"></i>
+        <!--        </title>-->
+      </div>
+      <div well-body>
+        <!--      <div class="body">-->
+        <!--        <body>-->
+        <h6>{{session.presenter}}</h6>
+        <span>Duration: {{session.duration}}</span><br/>
+        <span>Level: {{session.level}}</span>
+        <p>{{session.abstract}}</p>
+        <!--        </body>-->
+      </div>
     </collapsible-well>
+
+    <!--    <collapsible-well [title]="session.name">-->
+<!--      <h6>{{session.presenter}}</h6>-->
+<!--      <span>Duration: {{session.duration}}</span><br/>-->
+<!--      <span>Level: {{session.level}}</span>-->
+<!--      <p>{{session.abstract}}</p>-->
+<!--    </collapsible-well>-->
   </div>
 </div>
 <!--ng-fundamentalsnew\src\app\events\event-details\session-list.component.html END-->
