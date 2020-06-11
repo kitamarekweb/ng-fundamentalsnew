@@ -1,10 +1,14 @@
-// ng-fundamentals\src\app\events\shared\event.services.ts START
+// ng-fundamentals\src\app\events\shared\event.service.ts START
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class EventServices {
+export class EventService {
   getEvents() {
     return EVENTS;
+  }
+
+  getEvent(id: number) {
+    return EVENTS.find(event => event.id === id);
   }
 
 }
@@ -315,4 +319,4 @@ const EVENTS = [
     ]
   }
 ];
-// ng-fundamentals\src\app\events\shared\event.services.ts END
+// ng-fundamentals\src\app\events\shared\event.service.ts END
