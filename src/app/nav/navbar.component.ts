@@ -1,6 +1,7 @@
 // ng-fundamentalsnew\src\app\nav\navbar.component.ts START
 import {Component} from '@angular/core';
 import {AuthService} from '../user/auth.service';
+import {EventService, ISession} from '../events/shared';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -28,7 +29,18 @@ import {AuthService} from '../user/auth.service';
 })
 
 export class NavbarComponent {
-  constructor(public auth: AuthService) {
+  searchTerm: string = '';
+  foundSessions: ISession[];
+
+  constructor(public auth: AuthService, private eventService: EventService) {
+  }
+
+  searchSession(searchTerm) {
+    this.eventService.searchSessions(searchTerm).subscribe
+    (sessions => {
+      this.foundSessions = sessions;
+      console.log(this.foundSessions);
+    });
   }
 
 }

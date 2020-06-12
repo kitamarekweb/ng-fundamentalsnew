@@ -37,10 +37,12 @@
 
         </ul>
       </div>
-      <form id="searchForm" class="navbar-form navbar-right">
+      <form (ngSubmit)="searchSession(searchTerm)"
+            id="searchForm" class="navbar-form navbar-right">
         <div class="form-group">
           <label>
-            <input type="text" class="form-control" placeholder="Search Sessions">
+            <input [(ngModel)]="searchTerm" name="searchTerm"
+                   type="text" class="form-control" placeholder="Search Sessions">
           </label>
         </div>
         <button class="btn btn-default">
