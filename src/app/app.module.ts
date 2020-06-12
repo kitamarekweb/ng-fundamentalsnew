@@ -42,7 +42,7 @@ declare let toastr: ToastrService;
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
   ],
   imports: [
     BrowserModule,
