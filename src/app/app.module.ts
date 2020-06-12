@@ -1,7 +1,7 @@
 // ng-fundamentalsnew\src\app\app.module.ts START
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {EventsAppComponent} from './events-app.component';
@@ -53,9 +53,10 @@ declare let toastr: ToastrService;
   ],
   providers: [
     EventService,
-    { provide: TOASTR_TOKEN, useValue: toastr },
+    {provide: TOASTR_TOKEN, useValue: toastr},
     ToastrService,
-    EventRouteActivator,
+    {provide: EventRouteActivator, useClass: EventRouteActivator}, //the same as below
+    // EventRouteActivator, //the same as above
     EventsListResolver,
     AuthService,
     {
