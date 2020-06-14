@@ -7,7 +7,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {EventsAppComponent} from './events-app.component';
 import {NavbarComponent} from './nav/navbar.component';
 import {Error404Component} from './errors/404.component';
-import {CollapsibleWellComponent} from "./common/collapsible-well.component";
 
 import {
   EventsListComponent,
@@ -25,10 +24,11 @@ import {
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 
-import {ToastrService, TOASTR_TOKEN} from './common/toastr.service';
 import {AuthService} from "./user/auth.service";
+import {JQ_TOKEN, ToastrService, TOASTR_TOKEN, CollapsibleWellComponent} from './common';
 
-declare let toastr: ToastrService;
+let toastr: ToastrService = window['toastr'];
+let jQuery = window['$'];
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ declare let toastr: ToastrService;
   providers: [
     EventService,
     {provide: TOASTR_TOKEN, useValue: toastr},
+    {provide: JQ_TOKEN, useValue: jQuery},
     ToastrService,
     {provide: EventRouteActivator, useClass: EventRouteActivator}, //the same as below
     // EventRouteActivator, //the same as above
