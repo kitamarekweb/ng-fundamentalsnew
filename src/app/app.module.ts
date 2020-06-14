@@ -25,7 +25,11 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 
 import {AuthService} from "./user/auth.service";
-import {JQ_TOKEN, ToastrService, TOASTR_TOKEN, CollapsibleWellComponent} from './common';
+import {JQ_TOKEN,
+  ToastrService,
+  TOASTR_TOKEN,
+  CollapsibleWellComponent,
+  SimpleModalComponent} from './common';
 
 let toastr: ToastrService = window['toastr'];
 let jQuery = window['$'];
@@ -42,6 +46,7 @@ let jQuery = window['$'];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
+    SimpleModalComponent,
     DurationPipe,
   ],
   imports: [
