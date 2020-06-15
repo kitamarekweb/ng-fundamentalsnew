@@ -1,8 +1,7 @@
 // ng-fundamentalsnew\src\app\events\events-list-resolver.service.ts START
 import {Injectable} from '@angular/core';
 import {Resolve} from '@angular/router';
-import {EventService} from './shared/event.service';
-import {map} from 'rxjs/operators';
+import {EventService} from './shared';
 
 @Injectable()
 export class EventsListResolver implements Resolve<any> {
@@ -11,8 +10,8 @@ export class EventsListResolver implements Resolve<any> {
   }
 
   resolve() {
-    console.log('async imitation');
-    return this.eventService.getEvents().pipe(map(events => events));
+    console.log('getting data from http request');
+    return this.eventService.getEvents();
   }
 }
 
