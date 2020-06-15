@@ -20,6 +20,7 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   UpvoteComponent,
+  LocationValidator,
   DurationPipe
 } from './events';
 
@@ -54,6 +55,7 @@ let jQuery = window['$'];
     SimpleModalComponent,
     UpvoteComponent,
     ModalTriggerDirective,
+    LocationValidator,
     DurationPipe,
   ],
   imports: [
