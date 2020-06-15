@@ -1,7 +1,7 @@
 // ng-fundamentalsnew\src\app\events\events-list.component.ts START
 import {Component, OnInit} from '@angular/core';
 import {EventService, IEvent} from './shared';
-import {ToastrService} from '../common/toastr.service';
+import {ToastrService} from '../common';
 import {ActivatedRoute} from '@angular/router';
 
 // declare let toastr: any;
@@ -15,8 +15,8 @@ import {ActivatedRoute} from '@angular/router';
       <hr/>
       <div class="row">
         <div class="col-md-5" *ngFor="let event of events">
-          <event-thumbnail (click)="handleThumbnailClick(event.name)"
-                           [event]="event"></event-thumbnail>
+          <event-thumbnail [event]="event"></event-thumbnail>
+<!--          <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event"></event-thumbnail>-->
         </div>
       </div>
       <hr/>

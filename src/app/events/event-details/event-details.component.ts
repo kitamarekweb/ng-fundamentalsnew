@@ -1,7 +1,7 @@
 // ng-fundamentalsnew\src\app\events\event-details\event-details.component.ts START
 import {Component, OnInit} from '@angular/core';
 import {EventService} from '../shared';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {IEvent, ISession} from '../shared';
 
 @Component({
@@ -33,9 +33,9 @@ export class EventDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
-      this.event = this.eventService.getEvent(+params['id'])
-      this.addMode  = false;
+    this.route.data.forEach((data) => {
+      this.event = data['event'];
+      this.addMode = false;
     })
     //previous but search bug will happen, no refresh on same component
     // this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
