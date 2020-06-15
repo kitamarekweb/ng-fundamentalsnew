@@ -15,14 +15,14 @@ export class AuthService {
 
   loginUser(userName: string, password: string) {
 
-    let loginInfo = { username: userName, password: password };
-    let options = { headers: new HttpHeaders({'Content-Type': 'application/json'})}
+    let loginInfo = {username: userName, password: password};
+    let options = {headers: new HttpHeaders({'Content-Type': 'application/json'})}
 
     return this.http.post('/api/login', loginInfo, options)
       .pipe(tap(data => {
         this.currentUser = <IUser>data['user'];
       }))
-      .pipe(catchError(err=> {
+      .pipe(catchError(err => {
         console.log(err);
         return of(false);
       }));
@@ -33,7 +33,25 @@ export class AuthService {
     return !!this.currentUser;
   }
 
-  updateCurrentUser(firstName:string, lastName:string) {
+  checkAuthenticationStatus() {
+    this.http.get('/api/currentIdentity')
+      // OR
+      .pipe(tap(data => {
+          if (data instanceof Object) {
+            this.currentUser = <IUser>data;
+          }
+        }
+      ))
+      .subscribe()
+    // OR
+    // .subscribe(data => {
+    //   if(data instanceof Object) {
+    //     this.currentUser = <IUser>data;
+    //   }
+    // })
+  }
+
+  updateCurrentUser(firstName: string, lastName: string) {
     this.currentUser.firstName = firstName;
     this.currentUser.lastName = lastName;
   }

@@ -1,5 +1,6 @@
 // ng-fundamentalsnew\src\app\events-app.component.ts START
 import {Component} from '@angular/core';
+import {AuthService} from "./user/auth.service";
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -15,7 +16,13 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class EventsAppComponent {
-  title = 'app works!';
+
+  constructor(private auth: AuthService) {
+  }
+
+  ngOnInit() {
+    this.auth.checkAuthenticationStatus();
+  }
 }
 
 // ng-fundamentalsnew\src\app\events-app.component.ts END
