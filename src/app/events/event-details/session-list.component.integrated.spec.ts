@@ -56,7 +56,8 @@ describe('SessionListComponent', () => {
       component.ngOnChanges();
       fixture.detectChanges();
 
-      expect(document.querySelector('[well-title]').textContent).toContain('Session 1');
+      // expect(document.querySelector('[well-title]').textContent).toContain('Session 1');
+      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
 
     })
   })
