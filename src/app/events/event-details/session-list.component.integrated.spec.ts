@@ -11,12 +11,17 @@ import {CollapsibleWellComponent} from "../../common";
 describe('SessionListComponent', () => {
   let fixture: ComponentFixture<SessionListComponent>,
     component: SessionListComponent,
-    element: HTMLElement,
+    element: HTMLElement, //element.querySelector was not working, had to be replaced with document.querySelector
     debugEl: DebugElement
 
   beforeEach(async() => {
-    let mockAuthService = {};
-    let mockVoterService = {};
+    let mockAuthService = {
+      isAuthenticated: () => true,
+      currentUser: {userName: 'Joe'}
+    };
+    let mockVoterService = {
+      userHasVoted: () => true
+    };
 
     TestBed.configureTestingModule({
       imports: [],
@@ -51,7 +56,7 @@ describe('SessionListComponent', () => {
       component.ngOnChanges();
       fixture.detectChanges();
 
-      expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+      expect(document.querySelector('[well-title]').textContent).toContain('Session 1');
 
     })
   })
